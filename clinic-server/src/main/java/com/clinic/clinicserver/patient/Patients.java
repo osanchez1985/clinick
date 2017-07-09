@@ -1,11 +1,11 @@
-package com.clinic.clinicserver.patients;
+package com.clinic.clinicserver.patient;
 
 import java.util.Date;
 
 import javax.persistence.Entity;
 
 @Entity
-public class Patient {
+public class Patients {
 
 	private String employeId;
 	private String name;
