@@ -34,9 +34,17 @@ public class AllergiesAppService {
 	 }
 	 
 	 return allergiesDto;
-
-			
-			
-	
  }
+ 
+ public AllergiesDto getAllergyByName(Long id){
+	 
+	 Allergies allergy = allergiesRepository.getOne(id);
+	 AllergiesDto allergyDto = new AllergiesDto();
+	 allergyDto.setAllergyId(allergy.getAllergyId());
+	 allergyDto.setAllergyName(allergy.getAllergyName());
+	 allergyDto.setDescription(allergy.getDescription());
+	 
+	 return allergyDto;
+ }
+ 
 }
