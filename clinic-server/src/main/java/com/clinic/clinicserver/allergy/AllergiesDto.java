@@ -1,22 +1,17 @@
 package com.clinic.clinicserver.allergy;
 
-import javax.persistence.Entity;
 
-@Entity
-public class Allergies {
+public class AllergiesDto {
 
-	public Allergies(Long allergyId, String allergyName, String description) {
-		super();
-		this.allergyId = allergyId;
-		this.allergyName = allergyName;
-		this.description = description;
-	}
-	
 	private Long allergyId;
 	private String allergyName;
 	private String description;
 	
 	
+	public AllergiesDto() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public Long getAllergyId() {
 		return allergyId;
 	}
