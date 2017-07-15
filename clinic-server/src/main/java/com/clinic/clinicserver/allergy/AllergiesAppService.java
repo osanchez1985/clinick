@@ -47,4 +47,17 @@ public class AllergiesAppService {
 	 return allergyDto;
  }
  
+ public void createAllergy(long id,String name,String description){
+	 Allergies allergy= new Allergies(id, name, description);
+	 allergiesRepository.saveAndFlush(allergy);
+	 
+ }
+ public void modifiedAllergy(long id,String name,String description){
+	 
+	 Allergies allergy = allergiesRepository.getOne(id);
+	 allergy.setAllergyName(name);
+	 allergy.setDescription(description);
+	 allergiesRepository.saveAndFlush(allergy);
+	 
+ }
 }
