@@ -5,15 +5,21 @@ import javax.persistence.Entity;
 @Entity
 public class Allergies {
 
-	private int allergyId;
+	public Allergies(Long allergyId, String allergyName, String description) {
+		super();
+		this.allergyId = allergyId;
+		this.allergyName = allergyName;
+		this.description = description;
+	}
+	private Long allergyId;
 	private String allergyName;
 	private String description;
 	
 	
-	public int getAllergyId() {
+	public Long getAllergyId() {
 		return allergyId;
 	}
-	public void setAllergyId(int allergyId) {
+	public void setAllergyId(Long allergyId) {
 		this.allergyId = allergyId;
 	}
 	public String getAllergyName() {
