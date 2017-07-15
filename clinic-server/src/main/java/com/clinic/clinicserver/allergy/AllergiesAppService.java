@@ -52,7 +52,7 @@ public class AllergiesAppService {
 	 allergiesRepository.saveAndFlush(allergy);
 	 
  }
- public void modifiedAllergy(long id,String name,String description){
+ public void modifyAllergy(long id,String name,String description){
 	 
 	 Allergies allergy = allergiesRepository.getOne(id);
 	 allergy.setAllergyName(name);
