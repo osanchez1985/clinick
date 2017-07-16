@@ -32,10 +32,10 @@ public class AllergiesController {
 		return allergiesAppService.getAllergyById(allergyId);
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, value = "/allergy/")
-	public void createAllergy(@RequestBody AllergiesDto allergy ){
+	@RequestMapping(method = RequestMethod.POST)
+	public AllergiesDto createAllergy(@RequestBody AllergiesDto allergydto ){
 		
-		allergiesAppService.createAllergy(allergy);
+	return	allergiesAppService.createAllergy(allergydto);
 	
 	}
 

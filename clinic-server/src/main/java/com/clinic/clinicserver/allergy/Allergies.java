@@ -1,6 +1,7 @@
 package com.clinic.clinicserver.allergy;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
@@ -8,15 +9,17 @@ public class Allergies {
 
 	private Allergies() {}
 	
-	public Allergies(Long allergyId, String allergyName, String description) {
+	public Allergies(String allergyName, String description) {
 		super();
-		this.allergyId = allergyId;
+		
 		this.allergyName = allergyName;
 		this.description = description;
 	}
 	
 	@Id
+	@GeneratedValue
 	private Long allergyId;
+	
 	private String allergyName;
 	private String description;
 	

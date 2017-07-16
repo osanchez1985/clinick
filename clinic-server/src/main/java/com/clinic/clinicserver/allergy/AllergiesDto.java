@@ -12,6 +12,12 @@ public class AllergiesDto {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	public AllergiesDto(Allergies allergyentity) {
+		
+	 this.allergyId = allergyentity.getAllergyId();
+	 this.allergyName = allergyentity.getAllergyName();
+	 this.description = allergyentity.getDescription();
+	}
 	public Long getAllergyId() {
 		return allergyId;
 	}

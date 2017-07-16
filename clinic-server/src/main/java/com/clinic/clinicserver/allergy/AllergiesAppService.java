@@ -34,34 +34,34 @@ public class AllergiesAppService {
 		 allergiesDto.add(item);
 	 }
 	 
-	 AllergiesDto item = new AllergiesDto();
-	 item.setAllergyId(1l);
-	 item.setAllergyName("Olvin");
-	 allergiesDto.add(item);
 	 return allergiesDto;
  }
  
  public AllergiesDto getAllergyById(Long allergyId){
 	 
 	 Allergies allergy = allergiesRepository.findOne(allergyId);
+	 AllergiesDto allergyDto = new AllergiesDto();
 	 if (allergy != null)
 	 {
-	 AllergiesDto allergyDto = new AllergiesDto();
+		 
 	 allergyDto.setAllergyId(allergy.getAllergyId());
 	 allergyDto.setAllergyName(allergy.getAllergyName());
 	 allergyDto.setDescription(allergy.getDescription());
 	 }
-	 AllergiesDto allergyDto = new AllergiesDto();
-	 allergyDto.setAllergyId(1l);
-	 allergyDto.setAllergyName("Olvin");
-	 allergyDto.setDescription("EStoy Aqiu");
+
 	 return allergyDto;
  }
  
- public void createAllergy(AllergiesDto allergy){
-	 Allergies allergyentity= new Allergies(allergy.getAllergyId(), allergy.getAllergyName(), allergy.getDescription());
+ public AllergiesDto createAllergy(AllergiesDto allergy){
+	 Allergies allergyentity= new Allergies(allergy.getAllergyName(), allergy.getDescription());
 	 
-	 allergiesRepository.save(allergyentity);
+	 allergiesRepository.saveAndFlush(allergyentity);
+	 
+	 
+	 //allergiesRepository.save(allergyentity);
+	 
+	 AllergiesDto result = new AllergiesDto(allergyentity);
+	 return result;
 	 
  }
  public void modifyAllergy(long id, String name, String description){
