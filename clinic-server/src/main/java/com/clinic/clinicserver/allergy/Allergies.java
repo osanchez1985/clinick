@@ -1,10 +1,13 @@
 package com.clinic.clinicserver.allergy;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Allergies {
 
+	private Allergies() {}
+	
 	public Allergies(Long allergyId, String allergyName, String description) {
 		super();
 		this.allergyId = allergyId;
@@ -12,6 +15,7 @@ public class Allergies {
 		this.description = description;
 	}
 	
+	@Id
 	private Long allergyId;
 	private String allergyName;
 	private String description;

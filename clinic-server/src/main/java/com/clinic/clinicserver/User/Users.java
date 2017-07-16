@@ -3,17 +3,20 @@ package com.clinic.clinicserver.User;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Users {
 
+	@Id
 	private int userId;
 	private String userName;
 	private String name;
 	private String lastName;
 	private Date bithDate;
 	
-	private Categories category;
+	private Users(){}
+
 	
 	public int getUserId() {
 		return userId;
@@ -45,10 +48,5 @@ public class Users {
 	public void setBithDate(Date bithDate) {
 		this.bithDate = bithDate;
 	}
-	public Categories getCategory() {
-		return category;
-	}
-	public void setCategory(Categories category) {
-		this.category = category;
-	}
+
 }

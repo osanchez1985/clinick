@@ -3,10 +3,12 @@ package com.clinic.clinicserver.patient;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Patients {
 
+	@Id
 	private String employeId;
 	private String name;
 	private String lastName;
@@ -14,6 +16,8 @@ public class Patients {
 	private String phoneNumber;
 	private Date birthDate;
 	private String gender;
+	
+	private Patients(){}
 	
 	public String getEmployeId() {
 		return employeId;

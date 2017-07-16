@@ -1,13 +1,16 @@
 package com.clinic.clinicserver.shift;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Shifts {
 
+	@Id
 	private int shiftId;
 	private String shiftName;
 	
+	private Shifts(){}
 	
 	public int getShiftId() {
 		return shiftId;

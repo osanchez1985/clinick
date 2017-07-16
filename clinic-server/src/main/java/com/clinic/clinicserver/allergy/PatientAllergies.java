@@ -1,12 +1,25 @@
 package com.clinic.clinicserver.allergy;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class PatientAllergies {
 
-	private String employeId;
+	@Id
+	private long patientAllergyId;
 	private int allergyId;
+	private String employeId;
+	
+	private PatientAllergies(){} 
+		
+	public Long getPatientAllergyId(){
+		return patientAllergyId;
+	}
+	public void setPatientAllergyId(long patientAllergyId){
+		
+		this.patientAllergyId = patientAllergyId;
+	}
 	
 	public String getEmployeId() {
 		return employeId;

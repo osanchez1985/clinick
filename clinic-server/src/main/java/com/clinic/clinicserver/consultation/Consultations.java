@@ -3,10 +3,12 @@ package com.clinic.clinicserver.consultation;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Consultations {
 
+	@Id
 	private int consultation;
 	private String employeId;
 	private Date consultationDate;
@@ -18,6 +20,8 @@ public class Consultations {
 	private boolean aq;
 	private boolean aA;
 	private int consultationResponsable;
+	
+	private Consultations(){}
 	
 	public int getConsultation() {
 		return consultation;

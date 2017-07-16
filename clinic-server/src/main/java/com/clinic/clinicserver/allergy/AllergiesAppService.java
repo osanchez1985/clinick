@@ -24,7 +24,8 @@ public class AllergiesAppService {
 	 Iterable<Allergies> allergies = allergiesRepository.findAll();
       
 	 List<AllergiesDto> allergiesDto = new ArrayList<AllergiesDto>();
-	 for(Allergies allergy :allergies)
+	 
+    for(Allergies allergy :allergies)
 	 {
 		 AllergiesDto item = new AllergiesDto();
 		 item.setAllergyId(allergy.getAllergyId());
@@ -33,31 +34,43 @@ public class AllergiesAppService {
 		 allergiesDto.add(item);
 	 }
 	 
+	 AllergiesDto item = new AllergiesDto();
+	 item.setAllergyId(1l);
+	 item.setAllergyName("Olvin");
+	 allergiesDto.add(item);
 	 return allergiesDto;
  }
  
- public AllergiesDto getAllergyByName(Long id){
+ public AllergiesDto getAllergyById(Long allergyId){
 	 
-	 Allergies allergy = allergiesRepository.getOne(id);
+	 Allergies allergy = allergiesRepository.findOne(allergyId);
+	 if (allergy != null)
+	 {
 	 AllergiesDto allergyDto = new AllergiesDto();
 	 allergyDto.setAllergyId(allergy.getAllergyId());
 	 allergyDto.setAllergyName(allergy.getAllergyName());
 	 allergyDto.setDescription(allergy.getDescription());
-	 
+	 }
+	 AllergiesDto allergyDto = new AllergiesDto();
+	 allergyDto.setAllergyId(1l);
+	 allergyDto.setAllergyName("Olvin");
+	 allergyDto.setDescription("EStoy Aqiu");
 	 return allergyDto;
  }
  
- public void createAllergy(long id,String name,String description){
-	 Allergies allergy= new Allergies(id, name, description);
-	 allergiesRepository.saveAndFlush(allergy);
+ public void createAllergy(AllergiesDto allergy){
+	 Allergies allergyentity= new Allergies(allergy.getAllergyId(), allergy.getAllergyName(), allergy.getDescription());
+	 
+	 allergiesRepository.save(allergyentity);
 	 
  }
- public void modifyAllergy(long id,String name,String description){
+ public void modifyAllergy(long id, String name, String description){
 	 
 	 Allergies allergy = allergiesRepository.getOne(id);
 	 allergy.setAllergyName(name);
 	 allergy.setDescription(description);
-	 allergiesRepository.saveAndFlush(allergy);
+	 
+	 allergiesRepository.save(allergy);
 	 
  }
 }

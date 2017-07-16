@@ -3,15 +3,18 @@ package com.clinic.clinicserver.incapacity;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Incapacities {
 
+	@Id
 	private int incapacityId;
 	private int consultationId;
 	private Date incapacityDateFrom;
 	private Date incapacityDateTo;
 	
+	private Incapacities(){}
 	
 	public int getIncapacityId() {
 		return incapacityId;

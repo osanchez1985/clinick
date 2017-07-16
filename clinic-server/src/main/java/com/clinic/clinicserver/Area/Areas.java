@@ -1,12 +1,16 @@
 package com.clinic.clinicserver.Area;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Areas {
 
+	@Id
 	private int areaId;
 	private String areaName;
+	
+	private Areas(){}
 	
 	public int getAreaId() {
 		return areaId;

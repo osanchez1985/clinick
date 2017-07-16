@@ -1,12 +1,16 @@
 package com.clinic.clinicserver.diagnostic;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class DiagnosticTypes {
 
+	@Id
 	private int diagnotictypeId;
 	private String diagnosticTyepeId;
+	
+	private DiagnosticTypes(){}
 	
 	public int getDiagnotictypeId() {
 		return diagnotictypeId;
