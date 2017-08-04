@@ -1,18 +1,9 @@
 package com.clinic.clinicserver.patient;
 
 import java.util.Date;
-import java.util.Set;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+public class PatientDto {
 
-import com.clinic.clinicserver.allergy.PatientAllergies;
-
-@Entity
-public class Patients {
-
-	@Id
 	private String employeId;
 	private String name;
 	private String lastName;
@@ -22,24 +13,10 @@ public class Patients {
 	private String gender;
 	
 	
-	
-	public Patients(String employeId, String name, String lastName, String address, String phoneNumber, Date birthDate,
-			String gender) {
+	public PatientDto() {
 		super();
-		this.employeId = employeId;
-		this.name = name;
-		this.lastName = lastName;
-		this.address = address;
-		this.phoneNumber = phoneNumber;
-		this.birthDate = birthDate;
-		this.gender = gender;
-		
+		// TODO Auto-generated constructor stub
 	}
-
-
-
-	
-	private Patients(){}
 	
 	public String getEmployeId() {
 		return employeId;
@@ -83,6 +60,4 @@ public class Patients {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	
-
 }

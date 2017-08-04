@@ -57,9 +57,6 @@ public class AllergiesAppService {
 	 
 	 allergiesRepository.saveAndFlush(allergyentity);
 	 
-	 
-	 //allergiesRepository.save(allergyentity);
-	 
 	 AllergiesDto result = new AllergiesDto(allergyentity);
 	 return result;
 	 

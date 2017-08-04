@@ -1,12 +1,14 @@
 package com.clinic.clinicserver.shift;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Shifts {
 
 	@Id
+	@GeneratedValue
 	private int shiftId;
 	private String shiftName;
 	

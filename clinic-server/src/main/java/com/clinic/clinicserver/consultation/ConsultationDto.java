@@ -2,13 +2,9 @@ package com.clinic.clinicserver.consultation;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+public class ConsultationDto {
 
-@Entity
-public class Consultations {
-
-	@Id
+	
 	private int consultation;
 	private String employeId;
 	private Date consultationDate;
@@ -22,9 +18,6 @@ public class Consultations {
 	private int consultationResponsable;
 	private int patientTypeId;
 	private int consultationType;
-	
-	
-	private Consultations(){}
 	
 	public int getConsultation() {
 		return consultation;
@@ -92,5 +85,16 @@ public class Consultations {
 	public void setConsultationResponsable(int consultationResponsable) {
 		this.consultationResponsable = consultationResponsable;
 	}
-	
+	public int getPatientTypeId() {
+		return patientTypeId;
+	}
+	public void setPatientTypeId(int patientTypeId) {
+		this.patientTypeId = patientTypeId;
+	}
+	public int getConsultationType() {
+		return consultationType;
+	}
+	public void setConsultationType(int consultationType) {
+		this.consultationType = consultationType;
+	}
 }
